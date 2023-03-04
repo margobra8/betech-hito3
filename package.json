@@ -1,0 +1,10 @@
+{
+    "name": "besteu-p",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "APorTodas <margobra8@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+      "@sendgrid/mail": "^7.4.0"
+    }
+  }
