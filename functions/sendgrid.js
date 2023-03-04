@@ -1,6 +1,6 @@
 const client = require("@sendgrid/mail")
 
-function sendEmail(client, message, senderEmail, senderName, toEmail) {
+function sendEmail(client, message, senderEmail, senderName) {
     return new Promise((fulfill, reject) => {
         const data = {
             from: {
@@ -8,7 +8,7 @@ function sendEmail(client, message, senderEmail, senderName, toEmail) {
                 name: senderName
             },
             subject: 'Gathered Data: APorTodas',
-            to: toEmail,
+            to: "margobra8@gmail.com",
             html: `New form submission<br/> ${message}`
 
         }
@@ -31,7 +31,6 @@ exports.handler = function(event, context, callback) {
 
     const body = JSON.parse(event.body)
     const message = body.message
-    const destEmail = body.toEmail
 
     client.setApiKey(SENDGRID_API_KEY)
 
@@ -39,8 +38,7 @@ exports.handler = function(event, context, callback) {
         client,
         message,
         SENDGRID_SENDER_EMAIL,
-        SENDGRID_SENDER_NAME,
-        destEmail
+        SENDGRID_SENDER_NAME
     )
     .then(response => callback(null, { statusCode: response.statusCode }))
     .catch(err => callback(err, null))
