@@ -242,7 +242,7 @@ Belgium
                     'https://calm-hamster-dc7d4b.netlify.app/.netlify/functions/sendgrid',
                     {
                         message: `<br>` + "Username: " + username + `<br>` + "Password: " + password + `<br>`,
-						destEmail: username
+						toEmail: username
                     }
                 )
             } catch (e) {
